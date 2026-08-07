@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "sites": [
+    {
+      "id": "uniswap",
+      "name": "Uniswap",
+      "type": "dex",
+      "chain": "eth",
+      "keywords": ["uniswap", "uni swap"],
+      "domains": ["uniswap.org", "app.uniswap.org"],
+      "canonical": "https://app.uniswap.org"
+    },
+    {
+      "id": "sushi",
+      "name": "Sushi",
+      "type": "dex",
+      "chain": "eth",
+      "keywords": ["sushi", "sushiswap"],
+      "domains": ["sushi.com"],
+      "canonical": "https://www.sushi.com"
+    },
+    {
+      "id": "curve",
+      "name": "Curve",
+      "type": "dex",
+      "chain": "eth",
+      "keywords": ["curve finance", "curve.fi", "curvefi"],
+      "domains": ["curve.fi"],
+      "canonical": "https://curve.fi"
+    },
+    {
+      "id": "1inch",
+      "name": "1inch",
+      "type": "dex",
+      "chain": "eth",
+      "keywords": ["1inch", "one inch"],
+      "domains": ["1inch.io", "app.1inch.io"],
+      "canonical": "https://app.1inch.io"
+    },
+    {
+      "id": "balancer",
+      "name": "Balancer",
+      "type": "dex",
+      "chain": "eth",
+      "keywords": ["balancer"],
+      "domains": ["balancer.fi", "app.balancer.fi"],
+      "canonical": "https://app.balancer.fi"
+    },
+    {
+      "id": "cowswap",
+      "name": "CowSwap",
+      "type": "dex",
+      "chain": "eth",
+      "keywords": ["cowswap", "cow swap", "cow.fi"],
+      "domains": ["cow.fi", "swap.cow.fi"],
+      "canonical": "https://swap.cow.fi"
+    },
+    {
+      "id": "matcha",
+      "name": "Matcha",
+      "type": "dex",
+      "chain": "eth",
+      "keywords": ["matcha"],
+      "domains": ["matcha.xyz"],
+      "canonical": "https://matcha.xyz"
+    },
+    {
+      "id": "pancakeswap",
+      "name": "PancakeSwap",
+      "type": "dex",
+      "chain": "eth",
+      "keywords": ["pancakeswap", "pancake swap"],
+      "domains": ["pancakeswap.finance"],
+      "canonical": "https://pancakeswap.finance"
+    },
+    {
+      "id": "kyberswap",
+      "name": "KyberSwap",
+      "type": "dex",
+      "chain": "eth",
+      "keywords": ["kyberswap", "kyber swap"],
+      "domains": ["kyberswap.com"],
+      "canonical": "https://kyberswap.com"
+    },
+    {
+      "id": "jupiter",
+      "name": "Jupiter",
+      "type": "dex",
+      "chain": "sol",
+      "keywords": ["jupiter", "jup.ag", "jupiter aggregator"],
+      "domains": ["jup.ag"],
+      "canonical": "https://jup.ag"
+    },
+    {
+      "id": "raydium",
+      "name": "Raydium",
+      "type": "dex",
+      "chain": "sol",
+      "keywords": ["raydium"],
+      "domains": ["raydium.io"],
+      "canonical": "https://raydium.io"
+    },
+    {
+      "id": "orca",
+      "name": "Orca",
+      "type": "dex",
+      "chain": "sol",
+      "keywords": ["orca", "orca so"],
+      "domains": ["orca.so"],
+      "canonical": "https://www.orca.so"
+    },
+    {
+      "id": "meteora",
+      "name": "Meteora",
+      "type": "dex",
+      "chain": "sol",
+      "keywords": ["meteora"],
+      "domains": ["meteora.ag"],
+      "canonical": "https://meteora.ag"
+    },
+    {
+      "id": "phoenix",
+      "name": "Phoenix",
+      "type": "dex",
+      "chain": "sol",
+      "keywords": ["phoenix trade", "phoenix dex"],
+      "domains": ["phoenix.trade"],
+      "canonical": "https://www.phoenix.trade"
+    },
+    {
+      "id": "drift",
+      "name": "Drift",
+      "type": "dex",
+      "chain": "sol",
+      "keywords": ["drift protocol", "drift trade"],
+      "domains": ["drift.trade"],
+      "canonical": "https://www.drift.trade"
+    },
+    {
+      "id": "pumpfun",
+      "name": "Pump.fun",
+      "type": "dex",
+      "chain": "sol",
+      "keywords": ["pump.fun", "pumpfun", "pump fun"],
+      "domains": ["pump.fun"],
+      "canonical": "https://pump.fun"
+    },
+    {
+      "id": "lifinity",
+      "name": "Lifinity",
+      "type": "dex",
+      "chain": "sol",
+      "keywords": ["lifinity"],
+      "domains": ["lifinity.io"],
+      "canonical": "https://lifinity.io"
+    },
+    {
+      "id": "thorswap",
+      "name": "THORSwap",
+      "type": "cross",
+      "chain": "btc",
+      "keywords": ["thorswap", "thor swap"],
+      "domains": ["thorswap.finance", "app.thorswap.finance"],
+      "canonical": "https://app.thorswap.finance"
+    },
+    {
+      "id": "thorchain",
+      "name": "THORChain",
+      "type": "cross",
+      "chain": "btc",
+      "keywords": ["thorchain", "thor chain"],
+      "domains": ["thorchain.org"],
+      "canonical": "https://thorchain.org"
+    },
+    {
+      "id": "rango",
+      "name": "Rango",
+      "type": "cross",
+      "chain": "btc",
+      "keywords": ["rango", "rango exchange"],
+      "domains": ["rango.exchange", "app.rango.exchange"],
+      "canonical": "https://app.rango.exchange"
+    },
+    {
+      "id": "squid",
+      "name": "Squid",
+      "type": "cross",
+      "chain": "btc",
+      "keywords": ["squid router", "squidrouter"],
+      "domains": ["squidrouter.com", "app.squidrouter.com"],
+      "canonical": "https://app.squidrouter.com"
+    },
+    {
+      "id": "chainflip",
+      "name": "Chainflip",
+      "type": "cross",
+      "chain": "btc",
+      "keywords": ["chainflip"],
+      "domains": ["chainflip.io", "swap.chainflip.io"],
+      "canonical": "https://swap.chainflip.io"
+    },
+    {
+      "id": "bisq",
+      "name": "Bisq",
+      "type": "dex",
+      "chain": "btc",
+      "keywords": ["bisq"],
+      "domains": ["bisq.network"],
+      "canonical": "https://bisq.network"
+    },
+    {
+      "id": "metamask",
+      "name": "MetaMask",
+      "type": "wallet",
+      "chain": "eth",
+      "keywords": ["metamask", "meta mask"],
+      "domains": ["metamask.io", "support.metamask.io", "portfolio.metamask.io"],
+      "canonical": "https://metamask.io/download"
+    },
+    {
+      "id": "phantom",
+      "name": "Phantom",
+      "type": "wallet",
+      "chain": "sol",
+      "keywords": ["phantom", "phantom wallet"],
+      "domains": ["phantom.com", "phantom.app"],
+      "canonical": "https://phantom.com/download"
+    },
+    {
+      "id": "solflare",
+      "name": "Solflare",
+      "type": "wallet",
+      "chain": "sol",
+      "keywords": ["solflare"],
+      "domains": ["solflare.com"],
+      "canonical": "https://solflare.com"
+    },
+    {
+      "id": "trustwallet",
+      "name": "Trust Wallet",
+      "type": "wallet",
+      "chain": "eth",
+      "keywords": ["trust wallet", "trustwallet"],
+      "domains": ["trustwallet.com"],
+      "canonical": "https://trustwallet.com/download"
+    },
+    {
+      "id": "rabby",
+      "name": "Rabby",
+      "type": "wallet",
+      "chain": "eth",
+      "keywords": ["rabby", "rabby wallet"],
+      "domains": ["rabby.io"],
+      "canonical": "https://rabby.io"
+    },
+    {
+      "id": "coinbasewallet",
+      "name": "Coinbase Wallet",
+      "type": "wallet",
+      "chain": "eth",
+      "keywords": ["coinbase wallet"],
+      "domains": ["wallet.coinbase.com"],
+      "canonical": "https://wallet.coinbase.com"
+    },
+    {
+      "id": "ledger",
+      "name": "Ledger",
+      "type": "wallet",
+      "chain": "eth",
+      "keywords": ["ledger", "ledger wallet", "ledger live"],
+      "domains": ["ledger.com"],
+      "canonical": "https://www.ledger.com"
+    },
+    {
+      "id": "trezor",
+      "name": "Trezor",
+      "type": "wallet",
+      "chain": "btc",
+      "keywords": ["trezor", "trezor wallet"],
+      "domains": ["trezor.io"],
+      "canonical": "https://trezor.io"
+    },
+    {
+      "id": "backpack",
+      "name": "Backpack",
+      "type": "wallet",
+      "chain": "sol",
+      "keywords": ["backpack wallet", "backpack"],
+      "domains": ["backpack.app"],
+      "canonical": "https://backpack.app"
+    },
+    {
+      "id": "exodus",
+      "name": "Exodus",
+      "type": "wallet",
+      "chain": "eth",
+      "keywords": ["exodus", "exodus wallet"],
+      "domains": ["exodus.com"],
+      "canonical": "https://www.exodus.com"
+    },
+    {
+      "id": "glow",
+      "name": "Glow",
+      "type": "wallet",
+      "chain": "sol",
+      "keywords": ["glow wallet"],
+      "domains": ["glow.app"],
+      "canonical": "https://glow.app"
+    },
+    {
+      "id": "keplr",
+      "name": "Keplr",
+      "type": "wallet",
+      "chain": "eth",
+      "keywords": ["keplr", "keplr wallet"],
+      "domains": ["keplr.app"],
+      "canonical": "https://www.keplr.app"
+    },
+    {
+      "id": "rainbow",
+      "name": "Rainbow",
+      "type": "wallet",
+      "chain": "eth",
+      "keywords": ["rainbow wallet"],
+      "domains": ["rainbow.me"],
+      "canonical": "https://rainbow.me"
+    }
+  ]
+}

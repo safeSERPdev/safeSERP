@@ -1,0 +1,46 @@
+:root {
+  --bg-deep: #0c1412;
+  --bg-mid: #12201b;
+  --bg-panel: #183028;
+  --ink: #e8f5ef;
+  --ink-muted: #9cb8ab;
+  --green: #12b981;
+  --green-deep: #065f46;
+  --red: #ef4444;
+  --red-deep: #991b1b;
+  --accent: #f5d76e;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(18, 185, 129, 0.22), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(245, 215, 110, 0.12), transparent 50%),
+    linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 45%, #0a1210 100%);
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

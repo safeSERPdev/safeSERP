@@ -1,0 +1,17 @@
+node_modules/
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+.firebase/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+serviceAccount*.json
+*-firebase-adminsdk*.json
+*firebase-adminsdk*.json
+safeserp-firebase-adminsdk*.json
+firebase-debug.log
+.vscode/
+.idea/

@@ -1,0 +1,178 @@
+/* === Hide Google sponsored / ad units before paint === */
+#tads,
+#tadsb,
+#bottomads,
+#tvcap,
+#taw,
+[data-text-ad],
+[data-text-ad="1"],
+[data-aavs],
+[data-ta-slot],
+.commercial-unit-desktop-top,
+.commercial-unit-desktop-rhs,
+.commercial-unit-mobile-top,
+.pla-unit,
+.cu-container,
+div[aria-label="Ads"],
+div[data-text-ad],
+#rhs .pla-unit-container,
+.cu-container .pla-unit {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Reset any Google transforms that flip injected UI */
+#safeserp-status,
+#safeserp-official-banner,
+.safeserp-badge,
+.safeserp-badge * {
+  transform: none !important;
+  rotate: none !important;
+  scale: none !important;
+  writing-mode: horizontal-tb !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-orientation: mixed !important;
+  filter: none !important;
+}
+
+/* === Status strip (subtle) === */
+#safeserp-status {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 0 10px 0 !important;
+  padding: 8px 12px !important;
+  font-family: "Segoe UI", system-ui, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #86efac !important;
+  background: rgba(6, 78, 59, 0.55) !important;
+  border: 1px solid rgba(16, 185, 129, 0.45) !important;
+  border-radius: 6px !important;
+  line-height: 1.35 !important;
+}
+
+/* === Official banner (still clear, less bulky) === */
+#safeserp-official-banner {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 0 12px 0 !important;
+  padding: 12px 14px !important;
+  font-family: "Segoe UI", system-ui, sans-serif !important;
+  background: rgba(6, 78, 59, 0.75) !important;
+  color: #ecfdf5 !important;
+  border: 1px solid rgba(52, 211, 153, 0.55) !important;
+  border-radius: 8px !important;
+}
+
+#safeserp-official-banner .safeserp-banner-label {
+  display: block !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 4px !important;
+  color: #a7f3d0 !important;
+}
+
+#safeserp-official-banner .safeserp-banner-name {
+  display: block !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  margin-bottom: 8px !important;
+  color: #ffffff !important;
+}
+
+#safeserp-official-banner .safeserp-banner-link {
+  display: inline-block !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #064e3b !important;
+  background: #6ee7b7 !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  border: 1px solid #047857 !important;
+}
+
+#safeserp-official-banner .safeserp-banner-link:hover {
+  background: #a7f3d0 !important;
+}
+
+#safeserp-official-banner .safeserp-banner-hint {
+  display: block !important;
+  margin-top: 8px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+  color: #a7f3d0 !important;
+  opacity: 0.9 !important;
+}
+
+/* === Result row treatments (toned down) === */
+.safeserp-result-verified {
+  outline: 2px solid rgba(16, 185, 129, 0.65) !important;
+  outline-offset: 2px !important;
+  background: rgba(6, 78, 59, 0.18) !important;
+  border-radius: 6px !important;
+  padding: 6px 8px !important;
+  margin-bottom: 8px !important;
+}
+
+.safeserp-result-scam {
+  outline: 2px solid rgba(248, 113, 113, 0.7) !important;
+  outline-offset: 2px !important;
+  background: rgba(127, 29, 29, 0.2) !important;
+  border-radius: 6px !important;
+  padding: 6px 8px !important;
+  margin-bottom: 8px !important;
+}
+
+/* === Badges (readable, not huge) === */
+.safeserp-badge {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 0 8px 0 !important;
+  padding: 8px 10px !important;
+  font-family: "Segoe UI", system-ui, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.3 !important;
+  border-radius: 5px !important;
+  position: relative !important;
+  z-index: 2147483646 !important;
+  isolation: isolate !important;
+}
+
+.safeserp-badge-verified {
+  background: rgba(4, 120, 87, 0.92) !important;
+  color: #ecfdf5 !important;
+  border: 1px solid rgba(110, 231, 183, 0.55) !important;
+}
+
+.safeserp-badge-scam {
+  background: rgba(153, 27, 27, 0.92) !important;
+  color: #fef2f2 !important;
+  border: 1px solid rgba(252, 165, 165, 0.55) !important;
+}
+
+.safeserp-badge-sub {
+  display: block !important;
+  margin-top: 3px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  opacity: 0.9 !important;
+}
