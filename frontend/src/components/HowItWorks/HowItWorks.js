@@ -6,9 +6,9 @@ function HowItWorks() {
       <div className="how__inner">
         <h2 className="how__title">How it works</h2>
         <p className="how__lead">
-          Search Google for a DEX or wallet. SafeSERP clears sponsored fakes,
-          pins the official link first, and only badges the best matching result
-          — not every related subdomain.
+          Search Google for a DEX, exchange, dapp, or wallet. SafeSERP clears
+          sponsored fakes, pins the official link first, and only badges the
+          best matching result — not every related subdomain.
         </p>
         <ol className="how__list">
           <li>
@@ -35,10 +35,10 @@ function HowItWorks() {
             </span>
           </li>
           <li>
-            <strong>Warn on lookalikes</strong>
+            <strong>Hide lookalikes</strong>
             <span>
-              Fake or near-miss domains get a red “Warning — not official” label
-              pointing you back to the real URL.
+              Unofficial brand lookalikes are hidden so the pinned official URL
+              and verified result stay the clear path.
             </span>
           </li>
         </ol>

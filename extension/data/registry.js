@@ -1,4 +1,5 @@
-{
+/* auto-synced allowlist — edit verified-sites.json */
+self.__SAFESERP_REGISTRY__ = {
   "version": 2,
   "sites": [
     {
@@ -1765,4 +1766,4 @@
       "canonical": "https://swap.defillama.com"
     }
   ]
-}
+};

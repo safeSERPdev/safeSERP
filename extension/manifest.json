@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "SafeSERP — Block Sponsored Crypto Scams",
-  "version": "1.0.0",
-  "description": "Hides Google sponsored ads and badges official DEX & wallet sites so you click the real link.",
+  "version": "1.3.0",
+  "description": "Hides Google sponsored ads and badges official DEX, CEX, dapp & wallet sites so you click the real link.",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -203,14 +203,8 @@
         "*://www.google.cat/search*"
       ],
       "css": ["content/hide.css"],
-      "js": ["content/content.js"],
+      "js": ["data/registry.js", "content/content.js"],
       "run_at": "document_start"
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": ["data/verified-sites.json"],
-      "matches": ["<all_urls>"]
     }
   ],
   "browser_specific_settings": {

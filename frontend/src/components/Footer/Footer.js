@@ -10,8 +10,9 @@ function Footer() {
           <span>SafeSERP</span>
         </p>
         <p className="footer__copy">
-          Allowlist only — unknown sites are never marked safe. Official DEXs and
-          wallets live in <code>extension/data/verified-sites.json</code>.
+          Allowlist only — unknown sites are never marked safe. Official DEXs,
+          CEXes, dapps, and wallets live in{" "}
+          <code>extension/data/verified-sites.json</code>.
         </p>
       </div>
     </footer>

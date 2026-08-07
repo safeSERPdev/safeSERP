@@ -54,10 +54,10 @@ function Install() {
           ))}
         </div>
         <p className="install__note">
-          After loading, search Google for something like <code>uniswap</code> or{" "}
-          <code>metamask</code>. Sponsored ads should disappear, a pinned official
-          link should sit at the top, and the real result should show a verified
-          label.
+          After loading, search Google for something like <code>uniswap</code>,{" "}
+          <code>binance</code>, or <code>metamask</code>. Sponsored ads should
+          disappear, a pinned official link should sit at the top, and the real
+          result should show a verified label.
         </p>
       </div>
     </section>
