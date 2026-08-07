@@ -220,6 +220,12 @@ Open a PR with evidence that the domain is official (project docs, GitHub org, e
 
 Vite + React app in [`frontend/`](frontend/). Firebase Hosting serves `frontend/build` via [`firebase.json`](firebase.json).
 
+Downloads are versioned from `extension/manifest.json`, e.g. `safeserp-extension-1.3.0.zip`. Rebuild the zip + download links with:
+
+```bash
+node scripts/pack-extension.js
+```
+
 ```bash
 cd frontend
 npm install

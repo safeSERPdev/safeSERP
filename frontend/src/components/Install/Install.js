@@ -1,3 +1,8 @@
+import {
+  EXTENSION_VERSION,
+  EXTENSION_ZIP_NAME,
+  EXTENSION_ZIP_URL,
+} from "../../extensionVersion";
 import "./Install.css";
 
 const BROWSERS = [
@@ -35,10 +40,10 @@ function Install() {
         <p className="install__lead">
           <a
             className="install__download"
-            href="/safeserp-extension.zip"
-            download="safeserp-extension.zip"
+            href={EXTENSION_ZIP_URL}
+            download={EXTENSION_ZIP_NAME}
           >
-            Download SafeSERP (.zip)
+            Download SafeSERP v{EXTENSION_VERSION} (.zip)
           </a>
           {" — "}
           unzip it, then load that folder in your browser. Opera and Vivaldi use
