@@ -15,6 +15,9 @@ self.__SAFESERP_REGISTRY__ = {
         "uniswap.org",
         "app.uniswap.org"
       ],
+      "blockedDomains": [
+        "web.uniswap.org"
+      ],
       "canonical": "https://app.uniswap.org"
     },
     {
@@ -535,12 +538,15 @@ self.__SAFESERP_REGISTRY__ = {
       "name": "Binance",
       "keywords": [
         "binance",
-        "binance.com"
+        "binance.com",
+        "binance.us"
       ],
       "domains": [
         "binance.com",
         "www.binance.com",
-        "accounts.binance.com"
+        "accounts.binance.com",
+        "binance.us",
+        "www.binance.us"
       ],
       "canonical": "https://www.binance.com",
       "type": "cex",

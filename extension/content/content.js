@@ -290,20 +290,38 @@
     return false;
   }
 
+  // Known-bad hosts that share an official apex but are not the real product.
+  const BLOCKED_HOSTS = new Set(["web.uniswap.org"]);
+
+  function isBlockedHost(host) {
+    const h = normalizeHost(host);
+    if (!h) return false;
+    if (BLOCKED_HOSTS.has(h)) return true;
+    if (!registry) return false;
+    for (const site of registry.sites) {
+      const blocked = site.blockedDomains || [];
+      if (blocked.some((d) => hostMatchesDomain(h, d))) return true;
+    }
+    return false;
+  }
+
   function isLookalike(host, site) {
     const h = normalizeHost(host);
     if (!h || SAFE_STORE_HOSTS.has(h)) return false;
     if (findSiteByHost(h)) return false;
+    if (isBlockedHost(h)) return true;
 
     const tokens = brandTokens(site);
     const apex = etldPlusOne(h);
     const officialApexes = site.domains.map((d) => etldPlusOne(d));
+
+    // Same registrable domain as an allowlisted site → leave alone
+    // (docs/blog/etc.). Exact allowlisted hosts are verified elsewhere.
     if (officialApexes.includes(apex)) {
-      // Same registrable domain family but not an exact allowlisted host
-      return !site.domains.some((d) => hostMatchesDomain(h, d));
+      return false;
     }
 
-    // Nested spoof: official domain embedded as labels under a different apex
+    // Nested spoof: official domain embedded under a different apex
     // e.g. app.uniswap.org.evil.com
     for (const domain of site.domains) {
       const d = normalizeHost(domain);
@@ -312,29 +330,56 @@
       }
     }
 
-    // Brand impersonation in the registrable domain itself
-    // e.g. uniswap-app.com, metamasklogin.io, juplter.xyz
-    // Avoid substring traps like thephantommenace.com containing "phantom".
+    const scamBits = [
+      "claim",
+      "airdrop",
+      "connect-wallet",
+      "walletconnect-login",
+      "connectwallet",
+    ];
+    const brandInHost = tokens.some((t) => hostContainsBrand(h, t));
+    if (brandInHost && scamBits.some((b) => h.includes(b))) return true;
+
+    // Different apex + brand compound (uniswap-app.com, metamaskwallet.io)
+    const apexCompact = alnum(apex);
+    const compounds = [
+      "app",
+      "swap",
+      "wallet",
+      "login",
+      "connect",
+      "defi",
+      "exchange",
+      "airdrop",
+      "claim",
+    ];
+    for (const token of tokens) {
+      if (token.length < 5) continue;
+      for (const c of compounds) {
+        if (apexCompact === token + c || apexCompact === c + token) return true;
+      }
+      const firstLabel = alnum((h.split(".")[0] || ""));
+      if (
+        (h.includes("-") || h.includes("_")) &&
+        firstLabel.includes(token) &&
+        compounds.some((c) => firstLabel.includes(c))
+      ) {
+        return true;
+      }
+    }
+
+    // Strong typosquat only (not bare brand.tld — that may be an official alt TLD)
     const apexLabels = apex.split(".").map(alnum).filter(Boolean);
     for (const token of tokens) {
+      if (token.length < 6) continue;
       for (const label of apexLabels) {
-        if (!label) continue;
-        if (label === token) return true;
-        if (label.startsWith(token) && label.length <= token.length + 10) return true;
-        if (label.endsWith(token) && label.length <= token.length + 10) return true;
-        if (
-          Math.abs(label.length - token.length) <= 2 &&
-          levenshtein(label, token) <= 2
-        ) {
+        if (!label || label === token) continue;
+        const dist = levenshtein(label, token);
+        if (dist >= 1 && dist <= 2 && Math.abs(label.length - token.length) <= 2) {
           return true;
         }
       }
     }
-
-    // Brand + scam pattern in full host (claim/airdrop) only with brand proximity
-    const scamBits = ["claim", "airdrop", "connect-wallet", "walletconnect-login"];
-    const brandInHost = tokens.some((t) => hostContainsBrand(h, t));
-    if (brandInHost && scamBits.some((b) => h.includes(b))) return true;
 
     return false;
   }
@@ -602,6 +647,7 @@
     if (!h || SAFE_STORE_HOSTS.has(h) || !matchedSites.length) return false;
     // Never hide the allowlisted official result — that gets a green verified badge.
     if (findSiteByHost(h)) return false;
+    if (isBlockedHost(h)) return true;
     for (const site of matchedSites) {
       if (isLookalike(h, site)) return true;
     }

@@ -14,6 +14,9 @@ function Footer() {
           CEXes, dapps, and wallets live in{" "}
           <code>extension/data/verified-sites.json</code>.
         </p>
+        <p className="footer__links">
+          <a href="/privacy">Privacy</a>
+        </p>
       </div>
     </footer>
   );

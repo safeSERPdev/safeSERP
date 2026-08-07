@@ -40,3 +40,15 @@
   color: var(--accent);
   font-size: 0.88em;
 }
+
+.footer__links {
+  margin: 0.75rem 0 0;
+}
+
+.footer__links a {
+  color: var(--green);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}

@@ -1,0 +1,77 @@
+.privacy {
+  flex: 1;
+  padding: 3.5rem 0 4rem;
+}
+
+.privacy__inner {
+  width: min(720px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.privacy__eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.privacy__title {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  letter-spacing: -0.03em;
+}
+
+.privacy__updated {
+  margin: 0 0 1.5rem;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+.privacy p,
+.privacy li {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  font-size: 1.02rem;
+}
+
+.privacy p {
+  margin: 0 0 1rem;
+}
+
+.privacy h2 {
+  margin: 1.75rem 0 0.55rem;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.privacy ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.privacy li {
+  margin-bottom: 0.45rem;
+}
+
+.privacy strong {
+  color: var(--ink);
+}
+
+.privacy code {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.9em;
+}
+
+.privacy a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.privacy__back {
+  margin-top: 2rem;
+}

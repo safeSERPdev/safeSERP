@@ -65,7 +65,7 @@ function Hero() {
         <span> We hide them — and pin the real site.</span>
       </h1>
       <p className="hero__sub">
-        A one-job desktop extension for Chrome, Edge, Brave, and Firefox.
+        A one-job desktop extension for Chrome, Edge, Opera, Brave, and Firefox.
         Blocks sponsored results, pins the official DEX, exchange, dapp, or
         wallet link to the top of Google Search, and hides lookalike scams.
       </p>

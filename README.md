@@ -16,7 +16,7 @@ Anyone can audit this list, propose additions via PR, or fork it. Unknown sites 
 
 | Name | Official URL | Verified domains |
 | --- | --- | --- |
-| Binance | https://www.binance.com | `binance.com`, `www.binance.com`, `accounts.binance.com` |
+| Binance | https://www.binance.com | `binance.com`, `www.binance.com`, `accounts.binance.com`, `binance.us`, `www.binance.us` |
 | Coinbase | https://www.coinbase.com | `coinbase.com`, `www.coinbase.com`, `login.coinbase.com` |
 | Kraken | https://www.kraken.com | `kraken.com`, `www.kraken.com`, `pro.kraken.com` |
 | OKX | https://www.okx.com | `okx.com`, `www.okx.com` |
@@ -187,6 +187,19 @@ Anyone can audit this list, propose additions via PR, or fork it. Unknown sites 
 1. Open `about:debugging#/runtime/this-firefox`
 2. **Load Temporary Add-on…** → select [`extension/manifest.json`](extension/manifest.json)
 
+### Firefox Add-ons (AMO) listing ID
+
+The permanent extension ID in [`extension/manifest.json`](extension/manifest.json) is:
+
+`safeserp@safeserp.web.app`
+
+Use this exact ID when submitting to [addons.mozilla.org/developers](https://addons.mozilla.org/developers/). Do not change it after the first listing — AMO treats the ID as permanent. Steps:
+
+1. Create or sign in to an AMO developer account
+2. Submit a new listing and set the add-on ID to `safeserp@safeserp.web.app` (must match the manifest)
+3. Upload the versioned zip from `node scripts/pack-extension.js`
+4. Privacy policy URL: `https://safeserp.web.app/privacy` (deploy the site first)
+
 ## Test it
 
 Search Google for `uniswap`, `binance`, `aave`, `jupiter`, or `phantom`.
@@ -235,6 +248,9 @@ npm run build
 
 ## Privacy
 
+Full policy (site): [`/privacy`](https://safeserp.web.app/privacy) — source in [`frontend/src/components/Privacy/`](frontend/src/components/Privacy/).
+
 - Content scripts run only on Google Search result pages
 - Verification uses the bundled public allowlist in this repo
+- No accounts, analytics, or query exfiltration
 - Do not commit Firebase Admin SDK keys or `.env` files (see `.gitignore`)
