@@ -47,6 +47,7 @@ const header =
 
 const body =
   table("Centralized exchanges", (s) => s.type === "cex") +
+  table("Market data & trackers", (s) => s.type === "tracker") +
   table("Ethereum / EVM DEXs", (s) => s.type === "dex" && s.chain === "eth") +
   table("Ethereum / EVM dapps", (s) => s.type === "dapp" && s.chain === "eth") +
   table("Solana DEXs", (s) => s.type === "dex" && s.chain === "sol") +

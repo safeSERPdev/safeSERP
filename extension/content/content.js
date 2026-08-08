@@ -668,9 +668,11 @@
         ? "wallet"
         : site.type === "cex"
           ? "exchange"
-          : site.type === "dapp"
-            ? "dapp"
-            : "site") +
+          : site.type === "tracker"
+            ? "market data site"
+            : site.type === "dapp"
+              ? "dapp"
+              : "site") +
       " at the top. Unofficial lookalikes are hidden.";
 
     pin.appendChild(label);
@@ -901,9 +903,11 @@
         ? "wallet"
         : site.type === "cex"
           ? "exchange"
-          : site.type === "dapp"
-            ? "dapp"
-            : "site") +
+          : site.type === "tracker"
+            ? "market data site"
+            : site.type === "dapp"
+              ? "dapp"
+              : "site") +
       " — open this URL only.";
 
     card.appendChild(row);

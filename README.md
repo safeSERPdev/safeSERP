@@ -10,7 +10,7 @@ Works on **Chrome, Edge, Brave, Firefox, Opera, and Vivaldi** from one folder: [
 
 Source of truth (machine-readable): [`extension/data/verified-sites.json`](extension/data/verified-sites.json)
 
-Unknown sites are never marked safe — **allowlist only**.
+Anyone can audit this list, propose additions via PR, or fork it. Unknown sites are never marked safe — **allowlist only**.
 
 ### Centralized exchanges
 
@@ -36,6 +36,36 @@ Unknown sites are never marked safe — **allowlist only**.
 | Uphold | https://uphold.com | `uphold.com`, `www.uphold.com` |
 | Robinhood | https://robinhood.com | `robinhood.com`, `www.robinhood.com` |
 | Cash App | https://cash.app | `cash.app` |
+
+### Market data & trackers
+
+| Name | Official URL | Verified domains |
+| --- | --- | --- |
+| DefiLlama | https://defillama.com | `defillama.com`, `www.defillama.com` |
+| Birdeye | https://birdeye.so | `birdeye.so`, `www.birdeye.so` |
+| DexScreener | https://dexscreener.com | `dexscreener.com`, `www.dexscreener.com` |
+| CoinMarketCap | https://coinmarketcap.com | `coinmarketcap.com`, `www.coinmarketcap.com`, `pro.coinmarketcap.com` |
+| CoinGecko | https://www.coingecko.com | `coingecko.com`, `www.coingecko.com` |
+| DEXTools | https://www.dextools.io | `dextools.io`, `www.dextools.io` |
+| GeckoTerminal | https://www.geckoterminal.com | `geckoterminal.com`, `www.geckoterminal.com` |
+| CryptoCompare | https://www.cryptocompare.com | `cryptocompare.com`, `www.cryptocompare.com` |
+| CoinPaprika | https://coinpaprika.com | `coinpaprika.com`, `www.coinpaprika.com` |
+| LiveCoinWatch | https://www.livecoinwatch.com | `livecoinwatch.com`, `www.livecoinwatch.com` |
+| CryptoRank | https://cryptorank.io | `cryptorank.io`, `www.cryptorank.io` |
+| Messari | https://messari.io | `messari.io`, `www.messari.io` |
+| TradingView | https://www.tradingview.com | `tradingview.com`, `www.tradingview.com` |
+| CoinCodex | https://coincodex.com | `coincodex.com`, `www.coincodex.com` |
+| LunarCrush | https://lunarcrush.com | `lunarcrush.com`, `www.lunarcrush.com` |
+| CoinCap | https://coincap.io | `coincap.io`, `www.coincap.io`, `pro.coincap.io` |
+| CoinMarketCal | https://coinmarketcal.com | `coinmarketcal.com`, `www.coinmarketcal.com` |
+| Dune | https://dune.com | `dune.com`, `www.dune.com` |
+| Token Terminal | https://tokenterminal.com | `tokenterminal.com`, `www.tokenterminal.com` |
+| Nansen | https://www.nansen.ai | `nansen.ai`, `www.nansen.ai`, `app.nansen.ai` |
+| Arkham | https://intel.arkm.com | `arkhamintelligence.com`, `www.arkhamintelligence.com`, `intel.arkm.com` |
+| Glassnode | https://studio.glassnode.com | `glassnode.com`, `www.glassnode.com`, `studio.glassnode.com` |
+| Santiment | https://app.santiment.net | `santiment.net`, `www.santiment.net`, `app.santiment.net` |
+| Defined | https://www.defined.fi | `defined.fi`, `www.defined.fi` |
+| Bubblemaps | https://app.bubblemaps.io | `bubblemaps.io`, `www.bubblemaps.io`, `app.bubblemaps.io` |
 
 ### Ethereum / EVM DEXs
 
@@ -88,7 +118,6 @@ Unknown sites are never marked safe — **allowlist only**.
 | ParaSwap | https://app.paraswap.io | `paraswap.io`, `app.paraswap.io` |
 | Zapper | https://zapper.xyz | `zapper.xyz` |
 | DeBank | https://debank.com | `debank.com` |
-| DefiLlama | https://defillama.com | `defillama.com` |
 | LI.FI | https://jumper.exchange | `li.fi`, `jumper.exchange` |
 
 ### Solana DEXs
@@ -120,8 +149,6 @@ Unknown sites are never marked safe — **allowlist only**.
 | deBridge | https://app.debridge.finance | `debridge.finance`, `app.debridge.finance` |
 | Mayan | https://mayan.finance | `mayan.finance` |
 | Solscan | https://solscan.io | `solscan.io` |
-| Birdeye | https://birdeye.so | `birdeye.so` |
-| DEX Screener | https://dexscreener.com | `dexscreener.com` |
 | Helius | https://www.helius.dev | `helius.dev` |
 | Dialect | https://www.dialect.to | `dialect.to` |
 

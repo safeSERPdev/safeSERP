@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "sites": [
     {
       "id": "uniswap",
@@ -1261,14 +1261,16 @@
       "name": "DefiLlama",
       "keywords": [
         "defillama",
-        "defi llama"
+        "defi llama",
+        "llama"
       ],
       "domains": [
-        "defillama.com"
+        "defillama.com",
+        "www.defillama.com"
       ],
       "canonical": "https://defillama.com",
-      "type": "dapp",
-      "chain": "eth"
+      "type": "tracker",
+      "chain": "multi"
     },
     {
       "id": "lifi",
@@ -1467,28 +1469,30 @@
       "name": "Birdeye",
       "keywords": [
         "birdeye",
-        "birdeye.so"
+        "birdeye so"
       ],
       "domains": [
-        "birdeye.so"
+        "birdeye.so",
+        "www.birdeye.so"
       ],
       "canonical": "https://birdeye.so",
-      "type": "dapp",
-      "chain": "sol"
+      "type": "tracker",
+      "chain": "multi"
     },
     {
       "id": "dexscreener",
-      "name": "DEX Screener",
+      "name": "DexScreener",
       "keywords": [
         "dexscreener",
         "dex screener"
       ],
       "domains": [
-        "dexscreener.com"
+        "dexscreener.com",
+        "www.dexscreener.com"
       ],
       "canonical": "https://dexscreener.com",
-      "type": "dapp",
-      "chain": "sol"
+      "type": "tracker",
+      "chain": "multi"
     },
     {
       "id": "helius",
@@ -1769,6 +1773,341 @@
         "swap.defillama.com"
       ],
       "canonical": "https://swap.defillama.com"
+    },
+    {
+      "id": "coinmarketcap",
+      "name": "CoinMarketCap",
+      "keywords": [
+        "coinmarketcap",
+        "coin market cap",
+        "cmc"
+      ],
+      "domains": [
+        "coinmarketcap.com",
+        "www.coinmarketcap.com",
+        "pro.coinmarketcap.com"
+      ],
+      "canonical": "https://coinmarketcap.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "coingecko",
+      "name": "CoinGecko",
+      "keywords": [
+        "coingecko",
+        "coin gecko"
+      ],
+      "domains": [
+        "coingecko.com",
+        "www.coingecko.com"
+      ],
+      "canonical": "https://www.coingecko.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "dextools",
+      "name": "DEXTools",
+      "keywords": [
+        "dextools",
+        "dex tools"
+      ],
+      "domains": [
+        "dextools.io",
+        "www.dextools.io"
+      ],
+      "canonical": "https://www.dextools.io",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "geckoterminal",
+      "name": "GeckoTerminal",
+      "keywords": [
+        "geckoterminal",
+        "gecko terminal"
+      ],
+      "domains": [
+        "geckoterminal.com",
+        "www.geckoterminal.com"
+      ],
+      "canonical": "https://www.geckoterminal.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "cryptocompare",
+      "name": "CryptoCompare",
+      "keywords": [
+        "cryptocompare",
+        "crypto compare"
+      ],
+      "domains": [
+        "cryptocompare.com",
+        "www.cryptocompare.com"
+      ],
+      "canonical": "https://www.cryptocompare.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "coinpaprika",
+      "name": "CoinPaprika",
+      "keywords": [
+        "coinpaprika",
+        "coin paprika"
+      ],
+      "domains": [
+        "coinpaprika.com",
+        "www.coinpaprika.com"
+      ],
+      "canonical": "https://coinpaprika.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "livecoinwatch",
+      "name": "LiveCoinWatch",
+      "keywords": [
+        "livecoinwatch",
+        "live coin watch"
+      ],
+      "domains": [
+        "livecoinwatch.com",
+        "www.livecoinwatch.com"
+      ],
+      "canonical": "https://www.livecoinwatch.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "cryptorank",
+      "name": "CryptoRank",
+      "keywords": [
+        "cryptorank",
+        "crypto rank"
+      ],
+      "domains": [
+        "cryptorank.io",
+        "www.cryptorank.io"
+      ],
+      "canonical": "https://cryptorank.io",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "messari",
+      "name": "Messari",
+      "keywords": [
+        "messari"
+      ],
+      "domains": [
+        "messari.io",
+        "www.messari.io"
+      ],
+      "canonical": "https://messari.io",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "tradingview",
+      "name": "TradingView",
+      "keywords": [
+        "tradingview",
+        "trading view"
+      ],
+      "domains": [
+        "tradingview.com",
+        "www.tradingview.com"
+      ],
+      "canonical": "https://www.tradingview.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "coincodex",
+      "name": "CoinCodex",
+      "keywords": [
+        "coincodex",
+        "coin codex"
+      ],
+      "domains": [
+        "coincodex.com",
+        "www.coincodex.com"
+      ],
+      "canonical": "https://coincodex.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "lunarcrush",
+      "name": "LunarCrush",
+      "keywords": [
+        "lunarcrush",
+        "lunar crush"
+      ],
+      "domains": [
+        "lunarcrush.com",
+        "www.lunarcrush.com"
+      ],
+      "canonical": "https://lunarcrush.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "coincap",
+      "name": "CoinCap",
+      "keywords": [
+        "coincap",
+        "coin cap"
+      ],
+      "domains": [
+        "coincap.io",
+        "www.coincap.io",
+        "pro.coincap.io"
+      ],
+      "canonical": "https://coincap.io",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "coinmarketcal",
+      "name": "CoinMarketCal",
+      "keywords": [
+        "coinmarketcal",
+        "coin market cal"
+      ],
+      "domains": [
+        "coinmarketcal.com",
+        "www.coinmarketcal.com"
+      ],
+      "canonical": "https://coinmarketcal.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "dune",
+      "name": "Dune",
+      "keywords": [
+        "dune analytics",
+        "dune.com"
+      ],
+      "domains": [
+        "dune.com",
+        "www.dune.com"
+      ],
+      "canonical": "https://dune.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "tokenterminal",
+      "name": "Token Terminal",
+      "keywords": [
+        "token terminal",
+        "tokenterminal"
+      ],
+      "domains": [
+        "tokenterminal.com",
+        "www.tokenterminal.com"
+      ],
+      "canonical": "https://tokenterminal.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "nansen",
+      "name": "Nansen",
+      "keywords": [
+        "nansen"
+      ],
+      "domains": [
+        "nansen.ai",
+        "www.nansen.ai",
+        "app.nansen.ai"
+      ],
+      "canonical": "https://www.nansen.ai",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "arkham",
+      "name": "Arkham",
+      "keywords": [
+        "arkham",
+        "arkham intelligence"
+      ],
+      "domains": [
+        "arkhamintelligence.com",
+        "www.arkhamintelligence.com",
+        "intel.arkm.com"
+      ],
+      "canonical": "https://intel.arkm.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "glassnode",
+      "name": "Glassnode",
+      "keywords": [
+        "glassnode",
+        "glass node"
+      ],
+      "domains": [
+        "glassnode.com",
+        "www.glassnode.com",
+        "studio.glassnode.com"
+      ],
+      "canonical": "https://studio.glassnode.com",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "santiment",
+      "name": "Santiment",
+      "keywords": [
+        "santiment"
+      ],
+      "domains": [
+        "santiment.net",
+        "www.santiment.net",
+        "app.santiment.net"
+      ],
+      "canonical": "https://app.santiment.net",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "defined",
+      "name": "Defined",
+      "keywords": [
+        "defined.fi",
+        "defined fi"
+      ],
+      "domains": [
+        "defined.fi",
+        "www.defined.fi"
+      ],
+      "canonical": "https://www.defined.fi",
+      "type": "tracker",
+      "chain": "multi"
+    },
+    {
+      "id": "bubblemaps",
+      "name": "Bubblemaps",
+      "keywords": [
+        "bubblemaps",
+        "bubble maps"
+      ],
+      "domains": [
+        "bubblemaps.io",
+        "www.bubblemaps.io",
+        "app.bubblemaps.io"
+      ],
+      "canonical": "https://app.bubblemaps.io",
+      "type": "tracker",
+      "chain": "multi"
     }
   ]
 }
