@@ -146,7 +146,14 @@
 
   function getQuery() {
     try {
-      return new URLSearchParams(location.search).get("q") || "";
+      const sp = new URLSearchParams(location.search);
+      const fromUrl = sp.get("q") || sp.get("query") || "";
+      if (fromUrl.trim()) return fromUrl;
+      // SPA / entity views sometimes drop ?q= briefly — fall back to the search box.
+      const input = document.querySelector(
+        'textarea[name="q"], input[name="q"], form[role="search"] textarea, form[role="search"] input[type="text"]'
+      );
+      return (input && typeof input.value === "string" && input.value) || "";
     } catch {
       return "";
     }
@@ -395,14 +402,16 @@
         if (el && el.isConnected) el.remove();
       });
 
-    const roots = document.querySelectorAll("#center_col, #rso, #tads, #search");
+    const roots = document.querySelectorAll(
+      "#center_col, #rso, #tads, #search, #main, main"
+    );
     roots.forEach((root) => {
-      root.querySelectorAll("span").forEach((node) => {
+      root.querySelectorAll("span, div").forEach((node) => {
         const text = (node.textContent || "").trim().toLowerCase();
         if (!text || text.length > 24) return;
         if (!SPONSORED_LABELS.some((l) => text === l)) return;
         const block = node.closest(
-          "#tads, #tadsb, #bottomads, #tvcap, [data-text-ad], .cu-container"
+          "#tads, #tadsb, #bottomads, #tvcap, [data-text-ad], .cu-container, .uEierd, .commercial-unit-desktop-top, .commercial-unit-mobile-top"
         );
         if (block && block.isConnected) block.remove();
       });
@@ -470,11 +479,23 @@
       candidates.push(el);
     };
 
-    document.querySelectorAll("#rso .g, #search .g").forEach(push);
+    document
+      .querySelectorAll("#rso .g, #search .g, #main .g, main .g")
+      .forEach(push);
     if (!candidates.length) {
-      document.querySelectorAll("#rso a h3, #search a h3").forEach((h3) => {
-        push(h3.closest(".g") || h3.closest("div[data-hveid]"));
-      });
+      document
+        .querySelectorAll(
+          "#rso a h3, #search a h3, #main a h3, main a h3, #rso h3, #main h3"
+        )
+        .forEach((h3) => {
+          push(
+            h3.closest(".g") ||
+              h3.closest("div[data-hveid]") ||
+              h3.closest("div[data-ved]") ||
+              h3.closest("div.xpd") ||
+              h3.parentElement
+          );
+        });
     }
     return candidates;
   }
@@ -502,6 +523,7 @@
     // Prefer the results column / result list — never the searchform overlay tree.
     // Entity / "People also search" carousels often sit above #rso; still pin into #rso
     // when present so we don't land inside the carousel strip.
+    // Mobile Google (Firefox Android / m.google.*) often uses #main without #center_col.
     return (
       document.querySelector("#rso") ||
       document.querySelector("#search div#rso") ||
@@ -509,16 +531,34 @@
       document.querySelector("#search") ||
       document.querySelector("#center_col") ||
       document.querySelector("#main") ||
-      document.querySelector("[role='main']")
+      document.querySelector("main") ||
+      document.querySelector("[role='main']") ||
+      document.querySelector("#botstuff") ||
+      document.querySelector("form[role='search']")?.parentElement ||
+      null
     );
+  }
+
+  function expectedPrimary() {
+    if (!registry) return null;
+    return primarySiteForQuery(getQuery());
+  }
+
+  function hostInResults(el) {
+    const root = resultsAnchor();
+    return !!(el && el.isConnected && root && root.contains(el));
   }
 
   function uiMissing() {
     const root = resultsAnchor();
     if (!root) return true;
-    if (!statusHost || !statusHost.isConnected || !root.contains(statusHost)) {
-      return true;
-    }
+    syncOwnedRefs();
+    if (!hostInResults(statusHost)) return true;
+
+    // Banner alone is not enough — Google often strips the pin while leaving status.
+    const primary = expectedPrimary();
+    if (primary && !hostInResults(pinHost)) return true;
+
     return false;
   }
 
@@ -638,7 +678,25 @@
     pin.appendChild(link);
     pin.appendChild(hint);
 
-    placeAfter(pinHost, statusHost);
+    // Ensure status is in the live results tree first, then pin directly under it.
+    if (statusHost && statusHost.isConnected) {
+      placeAtTop(statusHost);
+      placeAfter(pinHost, statusHost);
+    } else {
+      placeAtTop(pinHost);
+    }
+
+    // If Google moved/replaced the results root mid-insert, force into live root.
+    const root = resultsAnchor();
+    if (root && !root.contains(pinHost)) {
+      if (statusHost && root.contains(statusHost)) {
+        placeAfter(pinHost, statusHost);
+      } else {
+        placeAtTop(statusHost || pinHost);
+        if (statusHost) placeAfter(pinHost, statusHost);
+      }
+    }
+
     return pinHost;
   }
 
@@ -944,13 +1002,41 @@
     return document.documentElement || document.body;
   }
 
+  function nodeTreeHadSafeSerp(node) {
+    if (!node || node.nodeType !== 1) return false;
+    if (
+      node.id === "safeserp-pin-host" ||
+      node.id === "safeserp-status-host" ||
+      node.id === "safeserp-synthetic-result"
+    ) {
+      return true;
+    }
+    return !!(
+      node.querySelector &&
+      node.querySelector(
+        "#safeserp-pin-host, #safeserp-status-host, #safeserp-synthetic-result"
+      )
+    );
+  }
+
   function ensureObserver() {
     const root = observeRoot();
     if (!root) return;
     if (!observer) {
-      observer = new MutationObserver(() => {
+      observer = new MutationObserver((mutations) => {
         if (mutating) return;
-        scheduleRun(false);
+        let force = false;
+        for (const m of mutations) {
+          for (const n of m.removedNodes) {
+            if (nodeTreeHadSafeSerp(n)) {
+              force = true;
+              break;
+            }
+          }
+          if (force) break;
+        }
+        // If UI is already gone, don't wait on the soft throttle.
+        scheduleRun(force || uiMissing());
       });
     }
     if (observeTarget !== root || !observeTarget || !observeTarget.isConnected) {
@@ -974,15 +1060,19 @@
       const f = !!scheduleRun._force;
       scheduleRun._force = false;
       run(f);
-    }, urgent ? 0 : 50);
+    }, urgent ? 0 : 40);
   }
 
   function run(force) {
-    if (mutating) return;
+    // Never drop a forced recovery while Google is mid-rewrite.
+    if (mutating) {
+      if (force) scheduleRun(true);
+      return;
+    }
     const now = Date.now();
     const href = location.href;
     const hrefChanged = href !== lastHref;
-    if (!force && !hrefChanged && now - lastRun < 180) return;
+    if (!force && !hrefChanged && now - lastRun < 120) return;
     lastRun = now;
     lastHref = href;
 
@@ -993,11 +1083,28 @@
       removeAds();
       insertStatus();
       verifyResults();
+
+      // Re-assert pin if Google wiped it during the same tick.
+      const primary = expectedPrimary();
+      if (primary && !hostInResults(pinHost)) {
+        insertOfficialPin(primary);
+      }
     } catch (err) {
       console.error("[SafeSERP] run failed", err);
     } finally {
       mutating = false;
       ensureObserver();
+      // Google often rewrites #rso right after inject — recover with bounded retries.
+      if (uiMissing()) {
+        const misses = (run._misses = (run._misses || 0) + 1);
+        if (misses <= 10) {
+          setTimeout(() => {
+            if (!mutating && uiMissing()) scheduleRun(true);
+          }, 80 + misses * 40);
+        }
+      } else {
+        run._misses = 0;
+      }
     }
   }
 
@@ -1031,14 +1138,14 @@
       /* some environments freeze history */
     }
 
-    // Safety net: if Google wiped our UI or SPA nav was missed, reinject.
+    // Safety net: if Google wiped our UI (often pin-only) or SPA nav was missed, reinject.
     if (heartbeatTimer) clearInterval(heartbeatTimer);
     heartbeatTimer = setInterval(() => {
       if (mutating) return;
       if (location.href !== lastHref || uiMissing()) {
         scheduleRun(true);
       }
-    }, 1000);
+    }, 400);
   }
 
   function boot(data) {
@@ -1056,7 +1163,8 @@
     } else {
       start();
     }
-    setTimeout(() => scheduleRun(true), 500);
+    setTimeout(() => scheduleRun(true), 200);
+    setTimeout(() => scheduleRun(true), 600);
     setTimeout(() => scheduleRun(true), 1500);
     setTimeout(() => scheduleRun(true), 3000);
   }

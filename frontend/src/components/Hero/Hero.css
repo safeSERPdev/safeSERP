@@ -70,19 +70,26 @@
   border-color: rgba(232, 245, 239, 0.25);
 }
 
-.hero__github {
+.hero__social {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+  animation: heroRise 0.9s ease-out 0.3s both;
+}
+
+.hero__github {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  margin-top: 0.85rem;
   color: var(--ink-muted);
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   text-decoration: none;
-  animation: heroRise 0.9s ease-out 0.3s both;
 }
 
 .hero__github:hover {
@@ -91,6 +98,22 @@
 
 .hero__github-icon {
   flex-shrink: 0;
+}
+
+.hero__x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.hero__x:hover {
+  color: var(--ink);
+}
+
+.hero__x-icon {
+  display: block;
 }
 
 @keyframes heroRise {

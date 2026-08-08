@@ -26,6 +26,16 @@ function Footer() {
             ·
           </span>
           <a
+            href="https://x.com/safeSERP"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            X
+          </a>
+          <span className="footer__sep" aria-hidden="true">
+            ·
+          </span>
+          <a
             href="https://github.com/safeSERPdev/safeSERP/blob/main/extension/data/verified-sites.json"
             target="_blank"
             rel="noopener noreferrer"

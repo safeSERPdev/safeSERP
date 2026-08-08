@@ -1,6 +1,6 @@
 # SafeSERP — store listing pack
 
-Extension package: [`../frontend/public/safeserp-extension-1.3.1.zip`](../frontend/public/safeserp-extension-1.3.1.zip)
+Extension package: [`../frontend/public/safeserp-extension-1.3.6.zip`](../frontend/public/safeserp-extension-1.3.6.zip)
 
 Homepage: https://safeserp.xyz/  
 Privacy policy: https://safeserp.xyz/privacy  
@@ -90,7 +90,7 @@ Then **Save Draft** and try **Submit for review** again.
 ## Submit checklist
 
 1. Deploy site so `/privacy` is live  
-2. Chrome Web Store → upload `safeserp-extension-1.3.1.zip` + 1280×800 screenshots + privacy URL  
+2. Chrome Web Store → upload `safeserp-extension-1.3.6.zip` + 1280×800 screenshots + privacy URL  
 3. Fill Privacy practices using the copy above  
 4. Edge Add-ons → same zip / screenshots / privacy URL  
 5. Firefox AMO → same zip, ID `safeserp@safeserp.web.app`, screenshots, privacy URL  

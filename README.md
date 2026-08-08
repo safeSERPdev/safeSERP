@@ -10,7 +10,7 @@ Works on **Chrome, Edge, Brave, Firefox, Opera, and Vivaldi** from one folder: [
 
 Source of truth (machine-readable): [`extension/data/verified-sites.json`](extension/data/verified-sites.json)
 
-Anyone can audit this list, propose additions via PR, or fork it. Unknown sites are never marked safe — **allowlist only**.
+Unknown sites are never marked safe — **allowlist only**.
 
 ### Centralized exchanges
 
@@ -189,49 +189,12 @@ Anyone can audit this list, propose additions via PR, or fork it. Unknown sites 
 
 ## Test it
 
-Search Google for `uniswap`, `binance`, `aave`, `jupiter`, or `phantom`.
+Search for any website on the whitelist.
 
 - Sponsored blocks should be gone
 - A pinned official link should sit at the top
 - The official domain should show a verified label
 - Lookalikes (if any) should be hidden
-
-## Contribute official sites
-
-Edit [`extension/data/verified-sites.json`](extension/data/verified-sites.json) and update the tables above to match:
-
-```json
-{
-  "id": "example",
-  "name": "Example",
-  "type": "dex",
-  "chain": "eth",
-  "keywords": ["example"],
-  "domains": ["example.com", "app.example.com"],
-  "canonical": "https://app.example.com"
-}
-
-Types: `dex`, `cex`, `dapp`, `wallet`, `cross`. Then run `node scripts/sync-whitelist.js`.
-```
-
-Open a PR with evidence that the domain is official (project docs, GitHub org, etc.).
-
-## Landing site
-
-Vite + React app in [`frontend/`](frontend/). Firebase Hosting serves `frontend/build` via [`firebase.json`](firebase.json).
-
-Downloads are versioned from `extension/manifest.json`, e.g. `safeserp-extension-1.3.0.zip`. Rebuild the zip + download links with:
-
-```bash
-node scripts/pack-extension.js
-```
-
-```bash
-cd frontend
-npm install
-cp .env.example .env   # add your Firebase web config if needed
-npm run build
-```
 
 ## Privacy
 

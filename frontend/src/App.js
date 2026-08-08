@@ -35,8 +35,8 @@ function App() {
         <>
           <Hero />
           <DemoScreens />
-          <HowItWorks />
           <Install />
+          <HowItWorks />
         </>
       )}
       <Footer />
