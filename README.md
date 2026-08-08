@@ -1,4 +1,4 @@
-# SafeSERP
+# <img src="frontend/public/safeserp-icon.png" alt="SafeSERP" width="48" height="48" /> SafeSERP
 
 Open-source desktop browser extension that **blocks Google sponsored search ads** and **pins / badges official crypto DEX & wallet sites** so phishing clones never sit in the first click.
 
