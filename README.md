@@ -2,7 +2,7 @@
 
 Open-source desktop browser extension that **blocks Google sponsored search ads** and **pins / badges official crypto DEX & wallet sites** so phishing clones never sit in the first click.
 
-Site: [https://safeserp.web.app](https://safeserp.web.app)
+Site: [https://safeserp.xyz](https://safeserp.xyz)
 
 Works on **Chrome, Edge, Brave, Firefox, Opera, and Vivaldi** from one folder: [`extension/`](extension/).
 
@@ -187,19 +187,6 @@ Anyone can audit this list, propose additions via PR, or fork it. Unknown sites 
 1. Open `about:debugging#/runtime/this-firefox`
 2. **Load Temporary Add-on…** → select [`extension/manifest.json`](extension/manifest.json)
 
-### Firefox Add-ons (AMO) listing ID
-
-The permanent extension ID in [`extension/manifest.json`](extension/manifest.json) is:
-
-`safeserp@safeserp.web.app`
-
-Use this exact ID when submitting to [addons.mozilla.org/developers](https://addons.mozilla.org/developers/). Do not change it after the first listing — AMO treats the ID as permanent. Steps:
-
-1. Create or sign in to an AMO developer account
-2. Submit a new listing and set the add-on ID to `safeserp@safeserp.web.app` (must match the manifest)
-3. Upload the versioned zip from `node scripts/pack-extension.js`
-4. Privacy policy URL: `https://safeserp.web.app/privacy` (deploy the site first)
-
 ## Test it
 
 Search Google for `uniswap`, `binance`, `aave`, `jupiter`, or `phantom`.
@@ -248,7 +235,7 @@ npm run build
 
 ## Privacy
 
-Full policy (site): [`/privacy`](https://safeserp.web.app/privacy) — source in [`frontend/src/components/Privacy/`](frontend/src/components/Privacy/).
+Full policy (site): [`/privacy`](https://safeserp.xyz/privacy) — source in [`frontend/src/components/Privacy/`](frontend/src/components/Privacy/).
 
 - Content scripts run only on Google Search result pages
 - Verification uses the bundled public allowlist in this repo

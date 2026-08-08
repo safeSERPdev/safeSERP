@@ -1,0 +1,53 @@
+.scam {
+  position: relative;
+  margin: 0 0 1.5rem;
+  max-width: 36rem;
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+}
+
+.scam--in {
+  animation: scamPop 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.scam__count {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--green);
+  font-variant-numeric: tabular-nums;
+}
+
+.scam__line {
+  margin: 0.55rem 0 0;
+  font-size: 1.02rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+
+.scam__line strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.scam__source {
+  margin: 0.4rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--ink-muted);
+  opacity: 0.85;
+}
+
+@keyframes scamPop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

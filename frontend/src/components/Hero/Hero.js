@@ -1,92 +1,54 @@
 import logo from "../../assets/safeSERP2.png";
-import uniswapLogo from "../../assets/logos/uniswap.png";
-import trezorLogo from "../../assets/logos/trezor.png";
 import {
   EXTENSION_VERSION,
   EXTENSION_ZIP_NAME,
   EXTENSION_ZIP_URL,
 } from "../../extensionVersion";
-import GserpDemo from "../GserpDemo/GserpDemo";
 import StoreButtons from "../StoreButtons/StoreButtons";
 import "./Hero.css";
-
-const UNISWAP_DEMO = {
-  query: "uniswap",
-  name: "Uniswap",
-  host: "app.uniswap.org",
-  canonical: "https://app.uniswap.org",
-  title: "Uniswap Interface",
-  snippet:
-    "Swap crypto on Ethereum, Base, Arbitrum, Polygon, Unichain and more. The DeFi platform trusted by millions.",
-  faviconSrc: uniswapLogo,
-  sitelinks: [
-    {
-      label: "Uniswap app",
-      desc: "Swap crypto on Ethereum, Base, Arbitrum…",
-    },
-    {
-      label: "Uniswap Pools",
-      desc: "Explore liquidity pools across networks.",
-    },
-  ],
-};
-
-const TREZOR_DEMO = {
-  query: "trezor",
-  name: "Trezor",
-  host: "trezor.io",
-  canonical: "https://trezor.io",
-  title: "Trezor Hardware Wallet",
-  snippet:
-    "The original hardware wallet. Keep your crypto safe offline with Trezor — official site only.",
-  faviconSrc: trezorLogo,
-  sitelinks: [
-    {
-      label: "Shop Trezor",
-      desc: "Buy the official Trezor hardware wallet.",
-    },
-    {
-      label: "Trezor Suite",
-      desc: "Manage your coins in the official app.",
-    },
-  ],
-};
 
 function Hero() {
   return (
     <header className="hero">
-      <div className="hero__glow" aria-hidden="true" />
       <p className="hero__brand">
         <img className="hero__logo" src={logo} alt="" />
         <span>SafeSERP</span>
       </p>
       <h1 className="hero__title">
-        Sponsored Google ads drain crypto wallets.
-        <span> We hide them — and pin the real site.</span>
+        Hide Google ad scams. Keep your money.
       </h1>
-      <p className="hero__sub">
-        A one-job desktop extension for Chrome, Edge, Opera, Brave, and Firefox.
-        Blocks sponsored results, pins the official DEX, exchange, dapp, or
-        wallet link to the top of Google Search, and hides lookalike scams.
-      </p>
+
       <div className="hero__actions">
         <a
           className="hero__cta"
           href={EXTENSION_ZIP_URL}
           download={EXTENSION_ZIP_NAME}
         >
-          Download v{EXTENSION_VERSION}
+          Download ZIP v{EXTENSION_VERSION}
         </a>
         <StoreButtons />
-        <a className="hero__cta hero__cta--ghost" href="#install">
-          Install steps
-        </a>
       </div>
 
-      <div className="hero__demo" aria-hidden="true">
-        <GserpDemo {...UNISWAP_DEMO} />
-        <GserpDemo {...TREZOR_DEMO} />
-      </div>
+      <a
+        className="hero__github"
+        href="https://github.com/safeSERPdev/safeSERP"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <svg
+          className="hero__github-icon"
+          viewBox="0 0 16 16"
+          width="18"
+          height="18"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+          />
+        </svg>
+        View on GitHub
+      </a>
     </header>
   );
 }

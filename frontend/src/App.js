@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero/Hero";
+import DemoScreens from "./components/DemoScreens/DemoScreens";
 import HowItWorks from "./components/HowItWorks/HowItWorks";
 import Install from "./components/Install/Install";
 import Footer from "./components/Footer/Footer";
@@ -33,6 +34,7 @@ function App() {
       ) : (
         <>
           <Hero />
+          <DemoScreens />
           <HowItWorks />
           <Install />
         </>
